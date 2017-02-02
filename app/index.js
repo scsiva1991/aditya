@@ -28,7 +28,7 @@ export default class App extends Component{
 
   constructor(props){
     super(props);
-    StatusBar.setBackgroundColor('#555555',false);
+    StatusBar.setBackgroundColor('#825c06',false);
   }
 
   componentWillMount(){
