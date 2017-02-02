@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
   tabContainer: {
     flex: 3,
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#faf7aa'
   },
   tabItemParentContainer: {
     flex: 1,
@@ -202,13 +202,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tabItemText:{
-    color: '#BEBEBE',
+    color: '#686752',
     fontSize: 16,
     backgroundColor: 'transparent',
     fontFamily: Fonts.OpenSansRegular
   },
   tabItemSelectedText:{
-    color: '#E8BF6F',
+    color: '#de9f0b',
     fontSize: 16,
     backgroundColor: 'transparent',
     fontFamily: Fonts.OpenSansSemibold

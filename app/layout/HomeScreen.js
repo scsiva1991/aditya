@@ -20,6 +20,7 @@ import {
 import Fonts from '../fonts/Fonts';
 import Colors from '../colors/Colors';
 import Constants from '../Constants';
+import Toolbar from '../components/Toolbar';
 
 import {
   isEmpty
@@ -51,10 +52,16 @@ export default class HomeScreen extends Component {
       });
   }
 
+  onBackIconPressed = () => {    
+  }
+
 
   render(){
     return(
       <View style={{flex: 1, backgroundColor: '#E4E4E4'}}>
+        <Toolbar backIconNeeded={true}
+          onBackIconPressed={this.onBackIconPressed}>
+        </Toolbar>
         <View style={styles.tabBar}>
             <HomeScreenTab ref={"homePageTab"} onTabSelect={this.onTabSelect} ></HomeScreenTab>
         </View>
