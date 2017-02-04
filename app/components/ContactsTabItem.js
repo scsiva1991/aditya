@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 18,
-    color: '#000000',
+    color: '#de9f0b',
     fontFamily: Fonts.OpenSansSemibold
   },
   content: {

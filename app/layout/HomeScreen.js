@@ -52,7 +52,7 @@ export default class HomeScreen extends Component {
       });
   }
 
-  onBackIconPressed = () => {    
+  onBackIconPressed = () => {
   }
 
 
@@ -87,6 +87,6 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   tabBar:{
-    height:80
+    height:100
   }
 });
