@@ -19,7 +19,8 @@ export default class Toolbar extends Component {
   static defaultProps = {
     backgroundColor : '#de9f0b',
     title : "Aditya Vidyashram",
-    description: 'A Day - Cum - Residential School CBSE/AFF/2930002',
+    description: 'A Day - Cum - Residential School',
+    description1: 'CBSE/AFF/2930002',
     titleColor: 'white',
     backIconNeeded: false,
     rightMenuIconNeeded: false,
@@ -39,12 +40,13 @@ export default class Toolbar extends Component {
 
   render(){
     return(
-      <View style={[styles.toolbarContainer, { justifyContent: 'center', alignItems:'center', backgroundColor : this.props.backgroundColor} ]}>
+      <View style={[styles.toolbarContainer, {backgroundColor : this.props.backgroundColor} ]}>
         <View style={{flexDirection:'row'}}>
           <Image style={{width:100, height:100}} source={require('../images/logo.png')}/>
           <View style={{justifyContent: 'center', marginRight: 8}}>
             <Text style={[styles.toolbarTitle, { color: this.props.titleColor} ]}>{this.props.title}</Text>
             <Text style={[styles.toolbarDescription]}>{this.props.description}</Text>
+            <Text style={[styles.toolbarDescription]}>{this.props.description1}</Text>
           </View>
         </View>
       </View>
@@ -56,8 +58,8 @@ export default class Toolbar extends Component {
 const styles = StyleSheet.create({
   toolbarContainer: {
     height: 100,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
   },
   toolbarTitle:{
     fontSize: 14,

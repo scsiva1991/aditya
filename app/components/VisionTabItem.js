@@ -69,7 +69,7 @@ export default class VisionTabItem extends Component {
     _this.setState({ loaderVisible: true, retryOptionVisible: false });
     StorageUtils.getJsonObject(StorageUtils.key_vision, (result) => {
       console.log(result);
-      if(result !== undefined && result !== null && result.length > 0){
+      if(result !== undefined && result !== null){
         _this.setState({
            result: result,
         });
@@ -91,11 +91,11 @@ export default class VisionTabItem extends Component {
         DetailsService.getVisionAndMission(()=>{
         }, (error, response) => {
           if(_this._isMounted){
-            if(error){
               _this.setState({
                   retryOptionVisible: true
               });
             }else{
+              if(error){
               this.setState({
                   loaderVisible: false
               });
@@ -157,7 +157,7 @@ export default class VisionTabItem extends Component {
       {(!this.state.loaderVisible && this.state.result) &&
             <ScrollView showsVerticalScrollIndicator={false} style={{padding:12}}>
               <View style={{flex:1}}>
-                  <Text style={[styles.header, { marginTop:8}]}>Vision</Text>                  
+                  <Text style={[styles.header, { marginTop:8}]}>Vision</Text>
                   {this.state.result.vision.map((obj, index) => {
                     return this.renderVisionItems(obj, index)
                     })
