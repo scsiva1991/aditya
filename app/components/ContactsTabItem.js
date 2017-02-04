@@ -135,12 +135,30 @@ export default class ContactsTabItem extends Component {
     return (
       <View style={{marginLeft:16,marginRight:16, paddingBottom:16}}>
         <Text style={styles.header}>{rowData.name}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.street}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>
-          {city}
-        </Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+        {!isEmpty(rowData.address_line1) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line1}</Text>
+        }
+
+        {!isEmpty(rowData.address_line2) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line2}</Text>
+        }
+
+        {!isEmpty(city) &&
+          <Text style={[styles.content, { marginTop:8}]}>{city}</Text>
+        }
+
+        {!isEmpty(rowData.phone) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
+        }
+
+        {!isEmpty(rowData.cell) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.cell}</Text>
+        }
+
+        {!isEmpty(rowData.email) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+        }
+
         <View style={{height: 8}}></View>
       </View>
     )

@@ -127,20 +127,88 @@ export default class BranchesTabItem extends Component {
 
   _renderRow (rowData, sectionID, rowID) {
     let onRowItemClick = () => {
+      let branchesList = this.state.branchesList;
+      let branchesListNew = [];
+      if(branchesList){
+        let symbolObj = rowData;
+        branchesList.forEach((item) => {
+            item = {
+              ...item,
+              isSelected: false,
+            }
+          branchesListNew.push(item);
+        });
+        if(rowData.isSelected){
+          branchesListNew[rowID].isSelected = !rowData.isSelected;
+        } else {
+            branchesListNew[rowID].isSelected = true;
+        }
+
+        this.setState({
+          branchesList: branchesListNew,
+          dataSource: this.state.dataSource.cloneWithRows(branchesListNew)
+        });
+      }
     }
+
     let city = rowData.city;
     if(!isEmpty(rowData.pincode)){
       city = city + " - " + rowData.pincode;
     }
     return (
       <View style={{marginLeft:16,marginRight:16, paddingBottom:16}}>
-        <Text style={styles.header}>{rowData.name}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.street}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>
-          {city}
-        </Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
-        <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+
+        <TouchableWithoutFeedback onPress ={onRowItemClick} underlayColor={"#9C389C"}>
+          <View style={styles.card}>
+            <View style={{flexDirection: 'row', padding:16, paddingTop:24, paddingBottom:16}}>
+                <Text style={[styles.cardHeader, { marginRight: 8, flex:1.8}]}>{rowData.title}</Text>
+                <View style={{flex:0.2}}>
+                  {(rowData.isSelected && rowData.isSelected == true) &&
+                    <Image source={require('../images/ic_keyboard_arrow_up_black.png')}/>
+                  }
+
+                  {(!rowData.isSelected || (rowData && rowData.isSelected == false)) &&
+                    <Image source={require('../images/ic_keyboard_arrow_down_black.png')}/>
+                  }
+
+                </View>
+            </View>
+
+            {(rowData.isSelected && rowData.isSelected == true) &&
+              <View style={{justifyContent: 'center',padding:16, paddingTop:0, paddingBottom:24}}>
+              {!isEmpty(rowData.name) &&
+                <Text style={[styles.header, { marginTop:8}]}>{rowData.name}</Text>
+              }
+              {!isEmpty(rowData.address_line1) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line1}</Text>
+              }
+
+              {!isEmpty(rowData.address_line2) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line2}</Text>
+              }
+
+              {!isEmpty(city) &&
+                <Text style={[styles.content, { marginTop:8}]}>{city}</Text>
+              }
+
+              {!isEmpty(rowData.phone) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
+              }
+
+              {!isEmpty(rowData.cell) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.cell}</Text>
+              }
+
+              {!isEmpty(rowData.email) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+              }
+
+              </View>
+            }
+
+          </View>
+        </TouchableWithoutFeedback>
+
         <View style={{height: 8}}></View>
       </View>
     )
@@ -194,13 +262,32 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.OpenSansRegular
   },
   header: {
-    fontSize: 18,
-    color: '#000000',
+    fontSize: 14,
+    color: '#de9f0b',
+    fontFamily: Fonts.OpenSansSemibold
+  },
+  cardHeader: {
+    fontSize: 16,
+    color: '#de9f0b',
     fontFamily: Fonts.OpenSansSemibold
   },
   content: {
-    fontSize: 15,
+    fontSize: 13,
     color: '#000000',
     fontFamily: Fonts.OpenSansRegular
+  },
+  card: {
+    borderWidth: 1.4,
+    backgroundColor: '#fff',
+    borderColor: 'rgba(0,0,0,0.1)',
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
+    borderBottomLeftRadius: 4,
+    flex: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 8, height: 8, },
+    shadowOpacity: 0.7,
+    shadowRadius: 3,
   },
 });
