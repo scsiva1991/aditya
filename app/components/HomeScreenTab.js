@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tabItemChildContainer: {
-    height: 100,
+    height: 65,
     alignItems: 'center',
     justifyContent: 'center'
   },

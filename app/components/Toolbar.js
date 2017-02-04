@@ -45,7 +45,7 @@ export default class Toolbar extends Component {
           <Image style={{width:100, height:100}} source={require('../images/logo.png')}/>
           <View style={{justifyContent: 'center', marginRight: 8}}>
             <Text style={[styles.toolbarTitle, { color: this.props.titleColor} ]}>{this.props.title}</Text>
-            <Text style={[styles.toolbarDescription]}>{this.props.description}</Text>
+            <Text style={[styles.toolbarDescription, {marginTop: 2}]}>{this.props.description}</Text>
             <Text style={[styles.toolbarDescription]}>{this.props.description1}</Text>
           </View>
         </View>
@@ -62,14 +62,13 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   toolbarTitle:{
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: Fonts.OpenSansSemibold,
   },
   toolbarDescription:{
-    fontSize: 12,
-    fontFamily: Fonts.OpenSansSemibold,
+    fontSize: 13,
     color: 'white',
-    marginTop: 8,
+    fontFamily: Fonts.OpenSansSemibold,
   },
   toolbarIcon: {
       marginTop: (Platform.OS === 'ios') ? 5 : 0

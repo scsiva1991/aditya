@@ -87,6 +87,6 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   tabBar:{
-    height:100
+    height:65
   }
 });
