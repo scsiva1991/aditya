@@ -91,11 +91,11 @@ export default class VisionTabItem extends Component {
         DetailsService.getVisionAndMission(()=>{
         }, (error, response) => {
           if(_this._isMounted){
+            if(error){
               _this.setState({
                   retryOptionVisible: true
               });
             }else{
-              if(error){
               this.setState({
                   loaderVisible: false
               });
@@ -138,7 +138,7 @@ export default class VisionTabItem extends Component {
         <Text style={styles.contentBullet}>
           {"\u2022"}
         </Text>
-        {" "+ this.state.result.mission[0]}
+        {" "+ obj}
       </Text>
     );
   }

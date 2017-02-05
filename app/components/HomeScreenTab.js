@@ -108,7 +108,7 @@ export default class HomeScreenTab extends Component {
               <TouchableWithoutFeedback onPress={() => this.selectTab(Constants.tabHomeContacts)}>
                   <View style={{alignItems:'center', justifyContent:'center'}}>
                       <Image source={require('../images/ic_contacts_selected.png')}/>
-                      <Text style={styles.tabItemSelectedText}>Contacts</Text>
+                      <Text style={styles.tabItemSelectedText}>Contact Us</Text>
                   </View>
               </TouchableWithoutFeedback>
             </View>
@@ -119,7 +119,7 @@ export default class HomeScreenTab extends Component {
               <TouchableWithoutFeedback onPress={() => this.selectTab(Constants.tabHomeContacts)}>
                   <View style={{alignItems:'center', justifyContent:'center'}}>
                       <Image source={require('../images/ic_contacts.png')}/>
-                      <Text style={styles.tabItemText}>Contacts</Text>
+                      <Text style={styles.tabItemText}>Contact Us</Text>
                   </View>
               </TouchableWithoutFeedback>
             </View>

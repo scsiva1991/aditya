@@ -286,9 +286,9 @@ export default class FeedbackTabItem extends Component {
                         </View>
 
                         <Text style={[styles.fixedLabel, {marginTop:16}]}>Feedback</Text>
-                        <View style={[styles.textContainer, {height: 100}]}>
+                        <View style={[styles.feedbackContainer]}>
                           <TextInput
-                            style={[styles.searchText, {flex:1,height: 100}]}
+                            style={[styles.searchText, {flex:1,alignItems: 'flex-start', textAlign: 'left'}]}
                             underlineColorAndroid='transparent'
                             autoFocus={false}
                             value={this.state.feedback}
@@ -515,6 +515,21 @@ const styles = StyleSheet.create({
   fixedLabel: {
     fontSize: 18,
     color: '#de9f0b'
-  }
+  },
+  feedbackContainer: {
+    height: 100,
+    backgroundColor:'white',
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
+    borderColor: '#ABABAB',
+    marginTop:8,
+    borderWidth: 0.5,
+    flexDirection: 'row',
+    justifyContent:'flex-start',
+    alignItems: 'flex-start',
+    flex:1,
+  },
 
 });
