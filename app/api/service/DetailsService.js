@@ -101,4 +101,47 @@ module.exports = {
         postExecute(Config.errorMessage, null);
       }
   },
+  postFeedBack : function (feedbackObj, preExecute, postExecute) {
+        /*{
+         "name":"Anand",
+         "city":"Chennai",
+         "state":"Tamil nadu",
+         "pincode":"607 402",
+         "country":"India",
+         "address":"New st",
+         "phone":"9790555814",
+         "email":"anand@connectivelinkstechnology.com",
+         "feedback":"Testing..."
+       }*/
+      if(preExecute){
+        preExecute();
+      }
+      try{
+        fetch(Config.baseUrl + "?action=post_feedback", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(feedbackObj),
+        }).then((response) => {
+            console.log("------postFeedBack------"+JSON.stringify(response));
+            if(response.status === 200){
+              let parsedJsonObj = JSON.parse(response._bodyText);
+              if(parsedJsonObj && parsedJsonObj.result){
+                postExecute(null, parsedJsonObj.result);
+              }else{
+                  postExecute(Config.errorMessage, null);
+              }
+            }else{
+              postExecute(Config.errorMessage, null);
+            }
+        }).catch((error) => {
+          console.error(error);
+          postExecute(Config.errorMessage, null);
+        });
+      }catch(error) {
+        console.error(error);
+        postExecute(Config.errorMessage, null);
+      }
+  },
 }

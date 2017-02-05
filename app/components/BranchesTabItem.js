@@ -223,8 +223,7 @@ export default class BranchesTabItem extends Component {
             <ListView style={{flex:1, paddingTop: 16}} showsVerticalScrollIndicator={false}
               dataSource={this.state.dataSource}
               enableEmptySections={true}
-              keyboardDismissMode="on-drag"
-              keyboardShouldPersistTaps={'always'}
+              keyboardDismissMode="on-drag"              
               renderRow={this._renderRow}
               renderSeparator={this._renderSeparator}
             />
