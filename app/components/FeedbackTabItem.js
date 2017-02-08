@@ -450,11 +450,14 @@ export default class FeedbackTabItem extends Component {
             */
           }
 
-            <View style={{height: 50}}></View>
+            <View style={{height: 30}}></View>
 
-            <TouchableHighlight onPress={this.submitData} style={{flexDirection:'row', paddingTop:16, paddingBottom:16, backgroundColor:'#de9f0b', justifyContent:'center'}}>
-                    <Text style={{textAlign:'center', color:'white', fontFamily: Fonts.OpenSansSemibold, fontSize: 20}}>SUBMIT</Text>
+            <View style={styles.container}>
+            <TouchableHighlight onPress={this.submitData} style={{padding:10, flexDirection:'row', backgroundColor:'#de9f0b', justifyContent:'center'}}>
+                    <Text style={{textAlign:'center', color:'white', fontFamily: Fonts.OpenSansSemibold, fontSize: 16}}>SUBMIT</Text>
             </TouchableHighlight>
+
+            </View>
 
             <View style={{height: 50}}></View>
 
@@ -493,19 +496,19 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexDirection: 'row',
-    height: 57,
+    height: 40,
     backgroundColor:'white',
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     borderColor: '#ABABAB',
-    marginTop:8,
+    marginTop:5,
     borderWidth: 0.5,
   },
   searchText: {
-    fontSize: 17,
-    height: 55,
+    fontSize: 15,
+    height: 40,
     borderWidth: 0,
     marginRight: (Platform.OS === 'ios') ? 8 : 8,
     marginLeft: (Platform.OS === 'ios') ? 8 : 8,
@@ -513,11 +516,11 @@ const styles = StyleSheet.create({
     color: '#000000'
   },
   fixedLabel: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#de9f0b'
   },
   feedbackContainer: {
-    height: 100,
+    height: 70,
     backgroundColor:'white',
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
@@ -530,6 +533,13 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',
     alignItems: 'flex-start',
     flex:1,
+  },
+  container: {
+    backgroundColor: 'white',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
 });

@@ -42,12 +42,13 @@ export default class Toolbar extends Component {
     return(
       <View style={[styles.toolbarContainer, {backgroundColor : this.props.backgroundColor} ]}>
         <View style={{flexDirection:'row'}}>
-          <Image style={{width:100, height:100}} source={require('../images/logo.png')}/>
-          <View style={{justifyContent: 'center', marginRight: 8}}>
+          <Image style={{width:80, height:80}} source={require('../images/logo.png')}/>
+          <View style={{justifyContent: 'center', marginRight: 6}}>
             <Text style={[styles.toolbarTitle, { color: this.props.titleColor} ]}>{this.props.title}</Text>
             <Text style={[styles.toolbarDescription, {marginTop: 2}]}>{this.props.description}</Text>
             <Text style={[styles.toolbarDescription]}>{this.props.description1}</Text>
           </View>
+          <Image style={{width:80, height:80}} source={require('../images/nabet_logo.png')}/>
         </View>
       </View>
     );
@@ -57,7 +58,7 @@ export default class Toolbar extends Component {
 
 const styles = StyleSheet.create({
   toolbarContainer: {
-    height: 100,
+    height: 80,
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
   },
