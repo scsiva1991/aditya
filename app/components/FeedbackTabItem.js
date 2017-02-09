@@ -97,14 +97,18 @@ export default class FeedbackTabItem extends Component {
        "feedback":this.state.feedback
      };
      DetailsService.postFeedBack(feedbackObj,() => {
-       this.setState({ spinnerVisible: true });
+       _this.setState({ spinnerVisible: true });
      },(error, response) => {
-       if(this._isMounted){
-         this.setState({ spinnerVisible: false });
+       if(_this._isMounted){
+         _this.setState({ spinnerVisible: false });
          if(error){
-           showAlert(Constants.error, error);
+           setTimeout(()=>{
+             showAlert(Constants.error, error);
+           }, 10);
          }else{
-           showAlert(Constants.message, "Thank you for your feedback");
+           setTimeout(()=>{
+             showAlert(Constants.message, "Thank you for your feedback");
+           }, 10);
            _this.setState({
              "name": '',
              "city": '',
@@ -452,12 +456,12 @@ export default class FeedbackTabItem extends Component {
 
             <View style={{height: 30}}></View>
 
-            <View style={styles.container}>
-            <TouchableHighlight onPress={this.submitData} style={{padding:10, flexDirection:'row', backgroundColor:'#de9f0b', justifyContent:'center'}}>
-                    <Text style={{textAlign:'center', color:'white', fontFamily: Fonts.OpenSansSemibold, fontSize: 16}}>SUBMIT</Text>
-            </TouchableHighlight>
-
+            <View style={{justifyContent:'center', alignItems:'center'}}>
+              <TouchableHighlight onPress={this.submitData} style={{padding:10, flexDirection:'column', backgroundColor:'#de9f0b', justifyContent:'center', alignItems:'center', width:150}}>
+                      <Text style={{textAlign:'center', color:'white', fontFamily: Fonts.OpenSansSemibold, fontSize: 16}}>SUBMIT</Text>
+              </TouchableHighlight>
             </View>
+
 
             <View style={{height: 50}}></View>
 
