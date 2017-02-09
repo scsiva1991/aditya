@@ -32,6 +32,7 @@ import {
 import DetailsService from '../api/service/DetailsService';
 import RetryLoader from '../components/RetryLoader';
 import StorageUtils from '../util/StorageUtils';
+import Autolink from 'react-native-autolink';
 
 export default class BranchesTabItem extends Component {
 
@@ -192,15 +193,15 @@ export default class BranchesTabItem extends Component {
               }
 
               {!isEmpty(rowData.phone) &&
-                <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
+                <Autolink style={[styles.content, { marginTop:8}]} text={rowData.phone} phone={true}/>
               }
 
               {!isEmpty(rowData.cell) &&
-                <Text style={[styles.content, { marginTop:8}]}>{rowData.cell}</Text>
+                <Autolink style={[styles.content, { marginTop:8}]} text={rowData.cell} phone={true} />
               }
 
               {!isEmpty(rowData.email) &&
-                <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+                <Autolink style={[styles.content, { marginTop:8}]} text={rowData.email} />
               }
 
               </View>

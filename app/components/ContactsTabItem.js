@@ -10,7 +10,8 @@ import {
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
   Modal,
-  ListView
+  ListView,
+  TouchableOpacity
 } from 'react-native';
 import Dimensions from 'Dimensions';
 import {
@@ -32,6 +33,8 @@ import {
 import DetailsService from '../api/service/DetailsService';
 import RetryLoader from '../components/RetryLoader';
 import StorageUtils from '../util/StorageUtils';
+import Autolink from 'react-native-autolink';
+import Communications from 'react-native-communications';
 
 export default class ContactsTabItem extends Component {
 
@@ -132,6 +135,7 @@ export default class ContactsTabItem extends Component {
     if(!isEmpty(rowData.pincode)){
       city = city + " - " + rowData.pincode;
     }
+
     return (
       <View style={{marginLeft:16,marginRight:16, paddingBottom:16}}>
         <Text style={styles.header}>{rowData.name}</Text>
@@ -148,15 +152,15 @@ export default class ContactsTabItem extends Component {
         }
 
         {!isEmpty(rowData.phone) &&
-          <Text style={[styles.content, { marginTop:8}]}>{rowData.phone}</Text>
+          <Autolink style={[styles.content, { marginTop:8}]} text={rowData.phone} phone={true}/>
         }
 
         {!isEmpty(rowData.cell) &&
-          <Text style={[styles.content, { marginTop:8}]}>{rowData.cell}</Text>
+          <Autolink style={[styles.content, { marginTop:8}]} text={rowData.cell} phone={true} />
         }
 
         {!isEmpty(rowData.email) &&
-          <Text style={[styles.content, { marginTop:8}]}>{rowData.email}</Text>
+            <Autolink style={[styles.content, { marginTop:8}]} text={rowData.email} />
         }
 
         <View style={{height: 8}}></View>
@@ -170,13 +174,28 @@ export default class ContactsTabItem extends Component {
       <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
 
       {(!this.state.loaderVisible && this.state.dataSource.getRowCount()>0) &&
-            <ListView style={{flex:1, paddingTop: 16}} showsVerticalScrollIndicator={false}
-              dataSource={this.state.dataSource}
-              enableEmptySections={true}
-              keyboardDismissMode="on-drag"              
-              renderRow={this._renderRow}
-              renderSeparator={this._renderSeparator}
-            />
+            <View>              
+              <ListView style={{paddingTop: 16}} showsVerticalScrollIndicator={false}
+                dataSource={this.state.dataSource}
+                enableEmptySections={true}
+                keyboardDismissMode="on-drag"
+                renderRow={this._renderRow}
+                renderSeparator={this._renderSeparator}
+              /> 
+
+              <View style={{alignItems:"center",justifyContent:'center', flexDirection: 'column'}}>
+                <Text style={styles.content} >Follow Us</Text>
+                <TouchableOpacity style={{marginTop: 8}} onPress={()=>{
+                    Communications.web('https://www.facebook.com/adityavidyashram/')
+                }}>
+                  <Image style={{width:50, height:50}} source={require('../images/facebook.png')}/>
+                </TouchableOpacity>                
+                <View style={{height: 8}}/>
+              </View>             
+              
+            </View>
+
+            
         }
 
         {(!this.state.loaderVisible && this.state.dataSource.getRowCount()==0) &&
