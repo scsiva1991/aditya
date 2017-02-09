@@ -1,3 +1,3 @@
 module.exports = {
-  loaderColor: '#9C389C'
+  loaderColor: '#de9f0b'
 }

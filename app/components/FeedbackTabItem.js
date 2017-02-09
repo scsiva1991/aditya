@@ -67,7 +67,6 @@ export default class FeedbackTabItem extends Component {
   }
 
   submitData = () => {
-    let _this = this;
     if (isEmpty(this.state.name)){
       showAlert(Constants.message, 'Please enter valid name');
     } else if(isEmpty(this.state.city)){
@@ -96,34 +95,62 @@ export default class FeedbackTabItem extends Component {
        "email":this.state.email,
        "feedback":this.state.feedback
      };
-     DetailsService.postFeedBack(feedbackObj,() => {
-       _this.setState({ spinnerVisible: true });
-     },(error, response) => {
-       if(_this._isMounted){
-         _this.setState({ spinnerVisible: false });
-         if(error){
-           setTimeout(()=>{
-             showAlert(Constants.error, error);
-           }, 10);
-         }else{
-           setTimeout(()=>{
-             showAlert(Constants.message, "Thank you for your feedback");
-           }, 10);
-           _this.setState({
-             "name": '',
-             "city": '',
-             "address": '',
-             "state": '',
-             "pincode": '',
-             "country": '',
-             "address": '',
-             "phone":'',
-             "email":'',
-             "feedback":''
-           });
+     if(this._isMounted){
+       this.setState({ spinnerVisible: true });
+     }
+     setTimeout(()=>{
+       DetailsService.postFeedBack(feedbackObj,()=>{
+
+        },(error, response) => {
+         if(this._isMounted){
+           this.setState({ spinnerVisible: false });
+           if(error){
+             setTimeout(()=>{
+               showAlert(Constants.error, Constants.error_message);
+             }, 10);
+           }else{
+             this.setState({
+               "name": '',
+               "city": '',
+               "address": '',
+               "state": '',
+               "pincode": '',
+               "country": '',
+               "address": '',
+               "phone":'',
+               "email":'',
+               "feedback":''
+             });
+             setTimeout(()=>{
+               showAlert(Constants.message, "Thank you for your feedback");
+             }, 10);
+           }
+           /*if(error){
+             setTimeout(()=>{
+               showAlert(Constants.error, error);
+             }, 100);
+           }else{
+             setTimeout(()=>{
+               showAlert(Constants.message, "Thank you for your feedback");
+             }, 100);
+             this.setState({
+               "name": '',
+               "city": '',
+               "address": '',
+               "state": '',
+               "pincode": '',
+               "country": '',
+               "address": '',
+               "phone":'',
+               "email":'',
+               "feedback":''
+             });
+           }*/
          }
-       }
-     });
+
+       });
+     },100);
+
     }
 
   }
@@ -471,7 +498,7 @@ export default class FeedbackTabItem extends Component {
 
 
 
-        <Spinner visible={this.state.spinnerVisible} color={'#890889'} closable={false} size={'large'} overlayColor={'rgba(0,0,0,0.58)'} />
+        <Spinner visible={this.state.spinnerVisible} color={'#de9f0b'} closable={false} size={'large'} overlayColor={'rgba(0,0,0,0.58)'} />
 
       </View>
     );
