@@ -58,7 +58,7 @@ export default class Toolbar extends Component {
 
 const styles = StyleSheet.create({
   toolbarContainer: {
-    height: (Platform.OS === 'ios') ? 100 : 80,
+    height: (Platform.OS === 'ios') ? 110 : 80,
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
   },

@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.OpenSansRegular
   },
   card: {
-    borderWidth: 1.4,
+    borderWidth: 1,
     backgroundColor: '#fff',
     borderColor: 'rgba(0,0,0,0.1)',
     borderTopLeftRadius: 4,
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 4,
     flex: 1,
     shadowColor: '#000',
-    shadowOffset: { width: 8, height: 8, },
+    shadowOffset: { width: 4, height: 4, },
     shadowOpacity: 0.7,
     shadowRadius: 3,
   },
