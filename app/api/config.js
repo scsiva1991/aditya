@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl : "http://connectivelinkstechnology.com/demo/adithya_school_app/api.php",  
+  baseUrl : "http://adityacbse.com/aditya/aditya_app/api.php",  //http://connectivelinkstechnology.com/demo/adithya_school_app/api.php
   errorMessage: "Please check your connection and try again",
   generateFormBody: function(requestObj){
     let formBody = [];

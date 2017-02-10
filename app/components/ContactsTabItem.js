@@ -147,6 +147,10 @@ export default class ContactsTabItem extends Component {
           <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line2}</Text>
         }
 
+        {!isEmpty(rowData.land_mark) &&
+          <Text style={[styles.content, { marginTop:8}]}>{rowData.land_mark}</Text>
+        }
+
         {!isEmpty(city) &&
           <Text style={[styles.content, { marginTop:8}]}>{city}</Text>
         }
@@ -174,14 +178,14 @@ export default class ContactsTabItem extends Component {
       <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
 
       {(!this.state.loaderVisible && this.state.dataSource.getRowCount()>0) &&
-            <View>              
+            <View>
               <ListView style={{paddingTop: 16}} showsVerticalScrollIndicator={false}
                 dataSource={this.state.dataSource}
                 enableEmptySections={true}
                 keyboardDismissMode="on-drag"
                 renderRow={this._renderRow}
                 renderSeparator={this._renderSeparator}
-              /> 
+              />
 
               <View style={{alignItems:"center",justifyContent:'center', flexDirection: 'column'}}>
                 <Text style={styles.content} >Follow Us</Text>
@@ -189,13 +193,13 @@ export default class ContactsTabItem extends Component {
                     Communications.web('https://www.facebook.com/adityavidyashram/')
                 }}>
                   <Image style={{width:50, height:50}} source={require('../images/facebook.png')}/>
-                </TouchableOpacity>                
+                </TouchableOpacity>
                 <View style={{height: 8}}/>
-              </View>             
-              
+              </View>
+
             </View>
 
-            
+
         }
 
         {(!this.state.loaderVisible && this.state.dataSource.getRowCount()==0) &&

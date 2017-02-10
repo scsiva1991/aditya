@@ -188,6 +188,10 @@ export default class BranchesTabItem extends Component {
                 <Text style={[styles.content, { marginTop:8}]}>{rowData.address_line2}</Text>
               }
 
+              {!isEmpty(rowData.land_mark) &&
+                <Text style={[styles.content, { marginTop:8}]}>{rowData.land_mark}</Text>
+              }
+
               {!isEmpty(city) &&
                 <Text style={[styles.content, { marginTop:8}]}>{city}</Text>
               }
@@ -224,7 +228,7 @@ export default class BranchesTabItem extends Component {
             <ListView style={{flex:1, paddingTop: 16}} showsVerticalScrollIndicator={false}
               dataSource={this.state.dataSource}
               enableEmptySections={true}
-              keyboardDismissMode="on-drag"              
+              keyboardDismissMode="on-drag"
               renderRow={this._renderRow}
               renderSeparator={this._renderSeparator}
             />
