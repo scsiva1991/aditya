@@ -1,8 +1,6 @@
 package com.adithya;
 
 import com.facebook.react.ReactActivity;
-import com.cboy.rn.splashscreen.SplashScreen;
-import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -13,11 +11,5 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "Adithya";
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen.show(this,true);
-        super.onCreate(savedInstanceState);
     }
 }

@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Platform,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import Fonts from '../fonts/Fonts'
@@ -41,7 +41,7 @@ export default class Toolbar extends Component {
   render(){
     return(
       <View style={[styles.toolbarContainer, {backgroundColor : this.props.backgroundColor} ]}>
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection:'row', marginTop: (Platform.OS === 'ios') ? 20 : 0 }}>
           <Image style={{width:80, height:80}} source={require('../images/logo.png')}/>
           <View style={{justifyContent: 'center', marginRight: 6}}>
             <Text style={[styles.toolbarTitle, { color: this.props.titleColor} ]}>{this.props.title}</Text>
@@ -58,7 +58,7 @@ export default class Toolbar extends Component {
 
 const styles = StyleSheet.create({
   toolbarContainer: {
-    height: 80,
+    height: (Platform.OS === 'ios') ? 100 : 80,
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
   },
