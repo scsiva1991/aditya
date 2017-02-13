@@ -3,6 +3,11 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "size" : "29x29",
       "scale" : "2x"
     },
     {
@@ -49,6 +54,11 @@
       "idiom" : "ipad",
       "filename" : "Icon-29.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "29x29",
+      "scale" : "2x"
     },
     {
       "size" : "40x40",
@@ -135,6 +145,13 @@
       "scale" : "3x"
     },
     {
+      "size" : "40x40",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "38mm"
+    },
+    {
       "size" : "44x44",
       "idiom" : "watch",
       "filename" : "Icon-88.png",
@@ -165,6 +182,11 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "mac",
+      "size" : "16x16",
+      "scale" : "2x"
+    },
+    {
       "size" : "32x32",
       "idiom" : "mac",
       "filename" : "Icon-32.png",
@@ -183,10 +205,20 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "mac",
+      "size" : "128x128",
+      "scale" : "2x"
+    },
+    {
       "size" : "256x256",
       "idiom" : "mac",
       "filename" : "Icon-256.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "256x256",
+      "scale" : "2x"
     },
     {
       "size" : "512x512",

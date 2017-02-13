@@ -821,6 +821,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.vidyashram;
 				PRODUCT_NAME = Adithya;
 				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -842,11 +843,13 @@
 				);
 				INFOPLIST_FILE = Adithya/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.vidyashram;
 				PRODUCT_NAME = Adithya;
 				PROVISIONING_PROFILE = "";
 				VERSIONING_SYSTEM = "apple-generic";
