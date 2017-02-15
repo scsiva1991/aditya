@@ -42,13 +42,13 @@ export default class Toolbar extends Component {
     return(
       <View style={[styles.toolbarContainer, {backgroundColor : this.props.backgroundColor} ]}>
         <View style={{flexDirection:'row', marginTop: (Platform.OS === 'ios') ? 20 : 0 }}>
-          <Image style={{width:80, height:80}} source={require('../images/logo.png')}/>
-          <View style={{justifyContent: 'center', marginRight: 6}}>
+          <Image style={{width:68, height:68}} source={require('../images/logo.png')}/>
+          <View style={{justifyContent: 'center', marginRight: 4}}>
             <Text style={[styles.toolbarTitle, { color: this.props.titleColor} ]}>{this.props.title}</Text>
             <Text style={[styles.toolbarDescription, {marginTop: 2}]}>{this.props.description}</Text>
             <Text style={[styles.toolbarDescription]}>{this.props.description1}</Text>
           </View>
-          <Image style={{width:80, height:80}} source={require('../images/nabet_logo.png')}/>
+          <Image style={{width:68, height:68,marginRight: 4}} source={require('../images/nabet_logo.png')}/>
         </View>
       </View>
     );
@@ -58,16 +58,16 @@ export default class Toolbar extends Component {
 
 const styles = StyleSheet.create({
   toolbarContainer: {
-    height: (Platform.OS === 'ios') ? 110 : 80,
+    height: (Platform.OS === 'ios') ? 100 : 80,
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
   },
   toolbarTitle:{
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: Fonts.OpenSansSemibold,
   },
   toolbarDescription:{
-    fontSize: 13,
+    fontSize: 12,
     color: 'white',
     fontFamily: Fonts.OpenSansSemibold,
   },

@@ -5,13 +5,14 @@ import {
   Alert,
   BackAndroid,
   StatusBar,
-  Navigator
+  Navigator,
+  Platform
 } from 'react-native';
 import {
   Scene,
   Router,
   ActionConst,
-  Actions
+  Actions,
 } from 'react-native-router-flux';
 import SplashScreen from 'react-native-splash-screen'
 
@@ -28,7 +29,10 @@ export default class App extends Component{
 
   constructor(props){
     super(props);
-    StatusBar.setBackgroundColor('#825c06',false);
+    if(Platform.OS === 'ios'){
+    } else {
+      StatusBar.setBackgroundColor('#825c06',false);
+    }
   }
 
   componentWillMount(){

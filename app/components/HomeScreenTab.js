@@ -203,13 +203,13 @@ const styles = StyleSheet.create({
   },
   tabItemText:{
     color: '#686752',
-    fontSize: 16,
+    fontSize: 15,
     backgroundColor: 'transparent',
     fontFamily: Fonts.OpenSansRegular
   },
   tabItemSelectedText:{
     color: '#de9f0b',
-    fontSize: 16,
+    fontSize: 15,
     backgroundColor: 'transparent',
     fontFamily: Fonts.OpenSansSemibold
   }

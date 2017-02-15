@@ -162,7 +162,7 @@ export default class VisionTabItem extends Component {
                     return this.renderVisionItems(obj, index)
                     })
                   }
-                  <View style={{ marginTop:8, justifyContent:'center', alignItems:'center'}}>
+                  <View style={{ padding:8, justifyContent:'center', alignItems:'center'}}>
                     <Image source={require('../images/samrakshana.jpg')}/>
                   </View>
                   <Text style={[styles.header, { marginTop:8}]}>Mission</Text>
