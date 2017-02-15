@@ -11,13 +11,21 @@
             <rect key="frame" x="0.0" y="0.0" width="365" height="509"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="yVJ-Xz-IMo">
+                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="yVJ-Xz-IMo">
                     <rect key="frame" x="82" y="155" width="200" height="200"/>
                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="DKP-zm-Edk"/>
+                        <constraint firstAttribute="height" constant="200" id="rkb-ms-86G"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+            <constraints>
+                <constraint firstItem="yVJ-Xz-IMo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jZr-C9-sbx"/>
+                <constraint firstItem="yVJ-Xz-IMo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jaz-vB-waW"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="490.5" y="469.5"/>
