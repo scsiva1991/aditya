@@ -476,6 +476,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = PE4DD5NTQU;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Adithya" */;
@@ -801,8 +804,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rafees P (28R7AUD2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rafees P (28R7AUD2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rafees P (PE4DD5NTQU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rafees P (PE4DD5NTQU)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
@@ -820,7 +823,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.vidyashram;
 				PRODUCT_NAME = Adithya;
-				PROVISIONING_PROFILE = "cfb181c4-6c61-4507-ac81-73c91b8056d8";
+				PROVISIONING_PROFILE = "b9636ba5-8d1b-4ec3-9d92-19fd00d133c9";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -829,8 +832,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rafees P (28R7AUD2LG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rafees P (28R7AUD2LG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rafees P (PE4DD5NTQU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rafees P (PE4DD5NTQU)";
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -848,7 +851,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.vidyashram;
 				PRODUCT_NAME = Adithya;
-				PROVISIONING_PROFILE = "cfb181c4-6c61-4507-ac81-73c91b8056d8";
+				PROVISIONING_PROFILE = "b9636ba5-8d1b-4ec3-9d92-19fd00d133c9";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
